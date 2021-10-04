@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="custom.css" rel="stylesheet"/>
+    
+    <!-- medium.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.0/rangy-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.0/rangy-classapplier.min.js"></script>
+    <script src="undo.js"></script>
+    <script src="medium.js"></script>
+    <link rel="stylesheet" href="medium.css">
+
+    <title>WPS Office | Document 1</title>
+  </head>
+  <body style="background-color: rgb(245, 247, 249);">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col">
+            <nav class="navbar fixed-top navbar-light bg-light">
+                
+                    <a class="navbar-brand" href="#">
+                        <img id="top-ribbon" src="img/top-ribbon.PNG" alt="">
+                    </a>
+            </nav>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-md-6">
+                <div id="editor">
+                    <div id="rich_with_widget_img" class="article demo">
+                        <p></p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <img id="bottom-ribbon" src="img/bottom-ribbon.PNG" alt="">
+    </footer>
+
+    <script>
+        // set observer to detect dom node removed
+        let x = new MutationObserver(function(e) {
+            if(e[0].removedNodes) { 
+                console.log(e[0].removedNodes);
+                if(document.getElementById('rich_with_widget_img').childNodes.length == 0) {
+                    document.getElementById('rich_with_widget_img').appendChild(document.createElement('p'));
+                }
+            }
+        });
+
+        x.observe(document.getElementById('rich_with_widget_img'), {childList : true});
+        // set the width of the ribbons
+        var screenWidth = document.body.clientWidth;
+        var topRibbon = document.getElementById("top-ribbon");
+        topRibbon.width = screenWidth;
+        var bottomRibbon = document.getElementById("bottom-ribbon");
+        bottomRibbon.width = screenWidth;
+        
+        // set attributes of the editor
+        var editorDiv = document.getElementById("editor");
+        editorDiv.style.marginTop = topRibbon.height + 20 + 'px';
+        
+        (function() {
+            var article = document.getElementById('rich_with_widget_img');
+
+            new Medium({
+                element: article,
+                mode: Medium.richMode,
+                placeholder: '',
+                attributes: null,
+                tags: null,
+                drag: false
+            });
+        })();
+
+        // add key event listener
+        editorDiv.addEventListener('keydown', (event) => {
+            const keyName = event.key;
+            if(keyName === 'Control') {
+                return;
+            }
+
+            if(event.ctrlKey) {
+                if(keyName == 'q') {
+                    // document.getElementById('front').style.visibility = "visible";
+                    // document.getElementById('front').style.height = "50px";
+                    // var cursor = getCaretPosition();
+                    // console.log(cursor);
+                    var image = document.createElement("img");
+                    image.id = "bird";
+                    image.src = "img/bird.jpg";
+                    image.style.height = "50px";
+                    image.setAttribute("contenteditable", "false");
+                    // document.getElementById("para").appendChild(image);
+
+                    var parray = document.getElementsByTagName('p');
+                    var lastP = parray[parray.length - 1];
+                    lastP.appendChild(image);
+
+                    setCursorPosition(5, 'image');
+                }
+                else if(keyName == 'v') {
+                    // document.getElementById('end').style.visibility = "visible";
+                    // document.getElementById('end').style.height = "50px";
+                    var image = document.createElement("img");
+                    image.id = "bird";
+                    image.src = "img/bird.jpg";
+                    image.style.height = "50px";
+                    image.setAttribute("contenteditable", "false");
+
+                    var parray = document.getElementsByTagName('p');
+                    var lastP = parray[parray.length - 1];
+                    lastP.appendChild(image);
+                    setCursorPosition(5, 'image');
+                }
+            }
+            else {
+                // console.log(getCaretPosition());
+            }
+        }, false);
+
+        editorDiv.addEventListener('mousedown',(event) => {
+            var parray = document.getElementsByTagName('p');
+            if(parray.length == 0) {
+                document.getElementById('rich_with_widget_img').appendChild(document.createElement('p'));
+                return;
+            }
+            if(parray[0].innerHTML.length === 0) {
+                var brs = document.getElementsByTagName('br');
+                var parentOfBr0 = brs[0].parentNode;
+                parentOfBr0.removeChild(brs[0]);
+            }
+        });
+
+        function getCaretPosition() {
+            var x = 0;
+            var y = 0;
+            var sel = window.getSelection();
+            if (sel.rangeCount) {
+                var range = sel.getRangeAt(0).cloneRange();
+                if (range.getClientRects()) {
+                range.collapse(true);
+                var rect = range.getClientRects()[0];
+                if (rect) {
+                    y = rect.top;
+                    x = rect.left;
+                }
+                }
+            }
+            return {
+                x: x,
+                y: y,
+            };
+        }
+
+        function setCursorPosition(pos, option) {
+            var parray = document.getElementsByTagName('p');
+            var lastP = parray[parray.length - 1];
+            var setPos = document.createRange();
+            var set = window.getSelection();
+            
+            setPos.setStartAfter(lastP.childNodes[lastP.childNodes.length - 1]);
+           
+
+            setPos.collapse(true);
+
+            set.removeAllRanges();
+            set.addRange(setPos);
+            lastP.focus();
+        }
+    </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  </body>
+</html>
