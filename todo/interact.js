@@ -26,7 +26,7 @@ function addEventsWhenExpanded() {
     eventList.insertBefore(lItem, eventList.firstChild);
 
     let image5 = document.createElement('img');
-    image5.src = 'img/Todo5_default.png';
+    image5.src = 'img/Todo5_Default.png';
     image5.id = '5';
     image5.style.width = '100%';
     let lItem5 = document.createElement('li');
