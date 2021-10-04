@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="interact.js" type="text/javascript"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="custom.css" rel="stylesheet">
+    <title>To-Do</title>
+  </head>
+  <body style="background-color: rgb(38, 37, 37);">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8">
+                <div class="row" id="yoyo" style="position: relative; width: 100%;">
+                    <img id="coll-back" src="img/Todo_Collapse_Background.png" style="width: 100%;" onclick="expandOrCollapse()">
+                    <div id="events">
+                        <ul id="events_list" onmouseover="eventsMouseOver(event)" onmouseout="eventsMouseOut(event)">
+                            <li><img id="2" src="img/Todo2_Default.png" style="width: 100%;" onclick="secondClicked()"></li>
+                            <li><img id="3" src="img/Todo3_Default.png" style="width: 100%"></li>
+                            <li><img id="4" src="img/Todo4_Default.png" style="width: 100%"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let stateOfBackground = "collapse";
+        function expandOrCollapse() {
+            if(stateOfBackground === "collapse") expand();
+            else collapse();
+        }
+        function expand() {
+            stateOfBackground = "expand";
+            changeToExpandedBackground();
+            repositionEventsListExpanded();
+            addEventsWhenExpanded();
+        }
+
+        function collapse() {
+            stateOfBackground = "collapse";
+            changeToCollapsedBackground();
+            repositionEventsListCollapsed();
+            deleteEventsWhenCollapsed();
+        }
+
+        function eventsMouseOver(event) {
+            // console.log('mouseover');
+            // console.log(event.target);
+            let mouseOverElement = event.target;
+            let elemId = mouseOverElement.id;
+            let index = parseInt(elemId);
+            changeItemToHoverState(mouseOverElement, index-1);
+        }
+
+        function eventsMouseOut(event) {
+            // console.log('mouseout');
+            // console.log(event.target);
+            let mouseOutElement = event.target;
+            let elemId = mouseOutElement.id;
+            let index = parseInt(elemId);
+            changeItemToDefaultState(mouseOutElement, index-1);
+        }
+
+        function secondClicked(event) {
+            let elm = document.getElementById('2');
+            console.log(elm);
+            elm.src = "img/Todo2_Selected.png";
+        }
+
+        // function eventsClick(event) {
+        //     let clickElement = event.target;
+        //     let elemId = clickElement.id;
+        //     let index = parseInt(elemId);
+        //     if(index <= 2) {
+        //         changeItemToSelectState(clickElement, index - 1);
+        //     }
+        // }
+    </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  </body>
+</html>
