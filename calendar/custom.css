@@ -15,7 +15,7 @@ img {
 #events {
     position: absolute;
     right: 0;
-    margin-top: 5%;
+    margin-top: 4%;
     margin-right: 5%;
     width: 75%;
 }
@@ -26,5 +26,7 @@ ul {
 }
 
 ul, li {
-    margin-bottom: -10px;
+    margin-bottom: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px; 
 }
