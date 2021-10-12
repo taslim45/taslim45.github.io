@@ -1,0 +1,211 @@
+body {
+    background: #F9F9FA;
+}
+
+.searchclass {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 5px;
+}
+
+form.search input[type=text] {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid grey;
+    width: 70%;
+    background: #ffffff;
+    border-radius: 3px;
+}
+
+form.search button {
+    width: 50px;
+    padding: 5px;
+    background: #2196F3;
+    color: white;
+    font-size: 16px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+form.search button:hover {
+    background: #0b7dda;
+}
+
+form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.settings {
+    float: right;
+    margin-right: 20px;
+}
+
+.search {
+    font-size: 16px;
+}
+
+.searchcount {
+    font-size: 14px;
+    float: left;
+}
+
+.sortby {
+    float: right;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.personbox {
+    width: 200px;
+}
+
+.websitebox {
+    width: 200px;
+}
+
+.fileformatbox {
+    width: 200px;
+}
+
+/* unvisited link */
+.myaccordion a:link {
+    color: royalblue;
+    text-decoration: none;
+}
+
+/* visited link */
+.myaccordion a:visited {
+    color: royalblue;
+    text-decoration: none;
+}
+
+/* mouse over link */
+.myaccordion a:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+/* selected link */
+.myaccordion a:active {
+    color: blue;
+    text-decoration: none;
+}
+
+.card-body {
+    background-color: #F9F9FA;
+    margin-right: 20px;
+}
+
+.addfilters {
+    float: left;
+}
+
+.addfilters a:link {
+    color: royalblue;
+    text-decoration: none;
+}
+
+.addfilters a:visited {
+    color: royalblue;
+    text-decoration: none;
+}
+
+.addfilters a:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+.filteroptions {
+    float: right;
+}
+
+.filteroptions a:link {
+    color: royalblue;
+    text-decoration: none;
+}
+
+.filteroptions a:visited {
+    color: royalblue;
+    text-decoration: none;
+}
+
+.filteroptions a:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+.filteroptions .btn-primary {
+    background-color: #3f9bec !important;
+}
+
+.filteroptions .btn-primary:hover {
+    background-color: #2676bc !important;
+}
+
+.prevsearch {
+    width: 300px;
+    background-color: white;
+    padding: 5px;
+    margin-top: 25px;
+    margin-left: 5px;
+}
+
+.prevsearch h4 {
+    font-size: 16px;
+}
+
+.prevsearchterms {
+    margin-top: 15px;
+}
+
+.prevsearchterms ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.prevsearchterms ul li {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.searchkeywords a {
+    font-size: 16px;
+    color: black;
+}
+
+.searchkeywords a:link {
+    text-decoration: none;
+    color: black;
+}
+
+.searchkeywords a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.searchkeywords a:visited {
+    text-decoration: none;
+}
+
+.resitems {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.resitems a {
+    font-size: 16px;
+    color: #682e99;
+}
+
+.resitems a:link, a:visited {
+    text-decoration: none;
+}
+
+.resitems a:hover {
+    text-decoration: underline;
+}
