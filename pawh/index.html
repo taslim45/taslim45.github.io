@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Date range picker starts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <!-- Date range picker ends-->
+    
+    <!-- <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script> -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src='js/bootstrap-tags.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-tags.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/custom.css">
+    <title>PAWH!</title>
+
+    <script>
+      $(function(){
+        $("#person").tags({
+          suggestions: ["Amelia Cole", "borke@google.com", "Joanna", "Kamyar", "Shareen Mahmud"]
+        });
+      });
+      $(function(){
+        $("#website").tags({
+          suggestions: ["Amazon", "BuzzFeed", "Facebook", "Pinterest", "Twitter", "Wikipedia", "YouTube"]
+        });
+      });
+      $(function(){
+        $("#fileformat").tags({
+          suggestions: ["Image", "PDF", "Text Document", "Video", "Webpage"]
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();   
+      });
+    </script>
+    <script>
+      $(function() {
+        $('input[name="daterange"]').daterangepicker({
+          opens: 'left'
+        }, function(start, end, label) {
+          console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Content here -->
+      <div class="row" style="margin-top: 20px"> <!-- first row-->
+        <div class="col-3"> <!-- Logo -->
+            <img src="logo.png" style="margin-left: 10px" height="48" width="48" alt="Logo of PAWH! It has the Firefox logo in the background with a white fox paw in the foreground.">
+        </div>
+        <div class="col-7"> <!-- search box -->
+            <div class="searchclass">
+                <form class="search">
+                    Search terms
+                    <input type="text" placeholder="Search.." value="knowledge worker reading">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div> 
+        </div>
+        <div class="col"> <!-- settings icon -->
+            <div class="settings">
+                <img src="settings.png" style="margin-left: 10px">
+            </div>
+        </div>
+      </div> <!-- first row ends-->
+      <div class="row" style="margin-top:10px"> <!-- second row-->
+        <div class="col-3"> <!-- this column will have previous search terms-->
+            <div class="prevsearch">
+                <h4><span style="color: #737373">Previous Related Searches</span></h4>
+                <div class="prevsearchterms">
+                    <ul>
+                        <li>
+                            <div class="searchkeywords"><a href=""><del style="text-decoration-color: red">how many </del>knowledge workers <span style="color:green">using smartphone</span><del style="text-decoration-color: red">read</del> while commuting<del style="text-decoration-color: red">?</del></a></div>
+                            <div class="row" style="margin-left:1px">
+                                <div class="linkscount">Pages visited: 3</div>
+                                <div class="searchdate" style="margin-left: 15px">Jun 22</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="searchkeywords"><a href="">how many knowledge workers read while commuting?</a></div>
+                            <div class="row" style="margin-left:1px">
+                                <div class="linkscount">Pages visited: 7</div>
+                                <div class="searchdate" style="margin-left: 15px">Jun 22</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="searchkeywords"><a href=""><span style="color:green">Pew Gartner report ''</span>knowledge worker<del style="text-decoration-color: red">s</del><span style="color:green">''</span> <span style="color:green">activities while commuting</span> <del style="text-decoration-color: red">reading</del> <del style="text-decoration-color: red">while</del> <del style="text-decoration-color: red">and</del> <del style="text-decoration-color: red">commuting</del> <del style="text-decoration-color: red">traveling</del></a></div>
+                            <div class="row" style="margin-left:1px">
+                                <div class="linkscount">Pages visited: 2</div>
+                                <div class="searchdate" style="margin-left: 15px">Jun 20</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="searchkeywords"><a href=""><span style="color:green">''</span>knowledge worker<del style="text-decoration-color: red">s</del><span style="color:green">''</span> <span style="color:green">activities while commuting</span> <del style="text-decoration-color: red">reading</del> <del style="text-decoration-color: red">while</del> <del style="text-decoration-color: red">and</del> <del style="text-decoration-color: red">commuting</del> <del style="text-decoration-color: red">traveling</del></a></div>
+                            <div class="row" style="margin-left:1px">
+                                <div class="linkscount">Pages visited: 4</div>
+                                <div class="searchdate" style="margin-left: 15px">Jun 20</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="searchkeywords"><a href=""><span style="color:green">''</span>knowledge workers<span style="color:green">''</span> reading <del style="text-decoration-color: red">while</del> <span style="color:green">and</span> <del style="text-decoration-color: red">commuting</del> <span style="color:green">traveling</span></a></div>
+                            <div class="row" style="margin-left:1px">
+                                <div class="linkscount">Pages visited: 2</div>
+                                <div class="searchdate" style="margin-left: 15px">Jun 20</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="searchkeywords"><a href="">knowledge workers reading while <del style="text-decoration-color: red">commuting</del> <span style="color:green">traveling</span></a></div>
+                            <div class="row" style="margin-left:1px">
+                                <div class="linkscount">Pages visited: 0</div>
+                                <div class="searchdate" style="margin-left: 15px">Jun 20</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="searchkeywords"><a href="">knowledge workers reading while commuting</a></div>
+                            <div class="row" style="margin-left:1px">
+                                <div class="linkscount">Pages visited: 6</div>
+                                <div class="searchdate" style="margin-left: 15px">Jun 20</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-7"> <!-- this column will have memory filters, search results-->
+            <div class="row"> <!-- This row will have memory filters. -->
+                <div class="col"> <!-- dummy column to align the contents-->
+                    <div class="myaccordion">
+                        <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            Memory Filters
+                        </a>
+                    </div>
+                    <div class="collapse in" id="collapseExample">
+                        <div class="card card-body">
+                            <div class="row">
+                                <div class="col-4">
+                                    Person <a href="#" data-trigger="focus" data-toggle="popover" title="What is 'Person'?" data-content="Person refers to who you shared with, or who shared with you."><img src="help.svg"></a> <br>
+                                    <div id="person" class="personbox"></div>
+                                </div>
+                                <div class="col-4">
+                                    Website <a href="#" data-trigger="focus" data-toggle="popover" title="What is 'Website'?" data-content="Website refers to platform where you might have seen the item that you are looking for. Was it on Twitter? Wikipedia? BuzzFeed?"><img src="help.svg"></a> <br>
+                                    <div id="website" class="websitebox"></div>
+                                </div>
+                                <div class="col-4">
+                                    File Type <a href="#" data-trigger="focus" data-toggle="popover" title="What is 'File Type'?" data-content="File type is the file format. The item you are looking for could be a website, video, image, PDF, ..."><img src="help.svg"></a> <br>
+                                    <div id="fileformat" class="fileformatbox"></div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <div class="col-4">
+                                    Date <a href="#" data-trigger="focus" data-toggle="popover" title="Date Range" data-content="Pick a date range to filter your search. Pick a start date and then pick an end date."><img src="help.svg"></a> <br>
+                                    <input type="text" name="daterange" style="width: 200px"/>
+                                </div>
+                                <div class="col-4">
+                                    Activity <a href="#" data-trigger="focus" data-toggle="popover" title="What is 'Activity'?" data-content="Activity refers to your actions when you last found the item. Did you download it? Did you upload anything to it?"><img src="help.svg"></a> <br>
+                                    <select style="width: 200px" aria-placeholder="wow">
+                                    <option value=""></option>
+                                    <option value="download">Download</option>
+                                    <option value="upload">Upload</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    Device Type <a href="#" data-trigger="focus" data-toggle="popover" title="Device Type" data-content="If you own multiple devices that are synced to the cloud, then you can filter by the devices that you use, e.g., laptop, phone, tablet."><img src="help.svg"></a> <br>
+                                    <select style="width: 200px">
+                                    <option value=""></option>
+                                    <option value="laptop">Laptop</option>
+                                    <option value="phone">Phone</option>
+                                    <option value="tab">Tablet</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <div class="col-4 addfilters">
+                                    <a href=""><img src="addfiltericon.png" width="32px">Add or edit memory filters</a>
+                                </div>
+                                <div class="col-4">
+                
+                                </div>
+                                <div class="col-4 filteroptions">
+                                    <a href="">Clear filters</a> <button type="button" class="btn btn-primary" style="margin-left: 40px">Apply Filters</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:15px"> <!-- This row will have search results number and sort by options -->
+                <div class="col">
+                    <div class="searchcount">
+                        Showing 6 of 19 results
+                    </div>
+                    <div class="sortby">
+                        Sort by 
+                        <select>
+                        <option value="recent">Recent visits</option>
+                        <option value="most">Most visited</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:15px"> <!-- This row will have search results. -->
+                <div class="col">
+                    <ul class="list-unstyled">
+                        <li class="media mt-3 mb-3">
+                            <div class="media-body">
+                                <div class="resitems">
+                                    <h5 class="mt-0 mb-1"><a href="">More Hours, Less Time: The Curse of Today's Knowledge Worker ...</a></h5>
+                                    <span style="color:green">https://www.theatlantic.com/sponsored/xerox-working-better/more-hours-less-time-the-curse-of-todays-knowledge-worker/699/</span>
+                                    Many employees report historic levels of stress, distraction and, not surprisingly, hours logged. In many cases it's not helping, and the costs are high. Here's why ...
+                                    <div class="row">
+                                        
+                                        <span style="vertical-align: middle; margin-left: 15px"><img src="calendar-24.png" width="18px"> Jun 22</span>
+                                    
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="visited.png" width="18px"> Visited 5 times</span>
+                                    
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="slideshare-24.png" width="18px"> Shared with Joanna M.</span>
+                                    
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="domain-24.png" width="18px"> Shared on Gmail</span>
+                                    
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="laptop-24.png" width="18px"> Laptop</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="media mt-3 mb-3">
+                            <div class="media-body">
+                                <div class="resitems">
+                                    <h5 class="mt-0 mb-1"><a href="">In Most States, a Spike in ‘Super Commuters’</a></h5>
+                                    <span style="color:green">http://www.pewtrusts.org/en/research-and-analysis/blogs/stateline/2017/06/05/in-most-states-a-spike-in-super-commuters</span>
+                                    The number of commuters who travel 90 minutes or more to get to work increased sharply between 2010 and 2015, a shift that traffic experts,...
+                                    <div class="row">
+                                        
+                                        <span style="vertical-align: middle; margin-left: 15px"><img src="calendar-24.png" width="18px"> Jun 22</span>
+                                    
+                                    
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="visited.png" width="18px"> Visited 3 times</span>
+                                
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="slideshare-24.png" width="18px"> Shared with Shareen M.</span>
+                                    
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="domain-24.png" width="18px"> Shared on Facebook</span>
+                                    
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="laptop-24.png" width="18px"> Laptop</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="media mt-3 mb-3">
+                            <div class="media-body">
+                                <div class="resitems">
+                                    <h5 class="mt-0 mb-1"><a href="">Remote Work Is Not About Avoiding the Commute - Bloomberg</a></h5>
+                                    <span style="color:green">https://www.bloomberg.com/view/articles/2017-06-29/remote-work-is-not-about-avoiding-the-commute</span>
+                                    There’s no single good answer to what works best for professionals, only tradeoffs.
+                                    <div class="row">
+                                        
+                                        <span style="vertical-align: middle; margin-left: 15px"><img src="calendar-24.png" width="18px"> Jun 22</span>
+                                    
+                                    
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="visited.png" width="18px"> Visited 2 times</span>
+                                
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="slideshare-24.png" width="18px"> Shared with Amelia C.</span>
+                                    
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="domain-24.png" width="18px"> Shared on Gmail</span>
+                                    
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="laptop-24.png" width="18px"> Laptop</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="media mt-3 mb-3">
+                            <div class="media-body">
+                                <div class="resitems">
+                                    <h5 class="mt-0 mb-1"><a href="">BBC - Capital - An easy way to read more each year</a></h5>
+                                    <span style="color:green">http://www.bbc.com/capital/story/20170825-an-easy-way-to-read-more-each-year</span>
+                                    With the time you spend commuting every day, you could read dozens of books every year. Pádraig Belton asks, is there a perfect medium for the length of your ride to work?
+                                    <div class="row">
+                                        
+                                        <span style="vertical-align: middle; margin-left: 15px"><img src="calendar-24.png" width="18px"> Jun 22</span>
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="visited.png" width="18px"> Visited 2 times</span>
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="laptop-24.png" width="18px"> Laptop</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="media mt-3 mb-3">
+                            <div class="media-body">
+                                <div class="resitems">
+                                    <h5 class="mt-0 mb-1"><a href="">I am a commuting knowledge worker and I enjoy my projects. - Medium</a></h5>
+                                    <span style="color:green">https://medium.com/@torreyumland/i-am-a-commuting-knowledge-worker-and-i-enjoy-my-projects-dbba75c8a64f</span>
+                                    I am a commuting knowledge worker and I enjoy my projects. I find the commute very destructive to mornings.
+                                    <div class="row">
+                                        
+                                        <span style="vertical-align: middle; margin-left: 15px"><img src="calendar-24.png" width="18px"> Jun 20</span>
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="visited.png" width="18px"> Visited 4 times</span>
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="slideshare-24.png" width="18px"> Shared by Borke O.</span>
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="domain-24.png" width="18px"> Shared on Twitter</span>
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="laptop-24.png" width="18px"> Laptop</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="media mt-3 mb-3">
+                            <div class="media-body">
+                                <div class="resitems">
+                                    <h5 class="mt-0 mb-1"><a href="">Make Time for the Work That Matters - Harvard Business Review</a></h5>
+                                    <span style="color:green">https://hbr.org/2013/09/make-time-for-the-work-that-matters</span>
+                                    How smart knowledge workers delegate tasks—or eliminate them altogether. ... We've spent the past three years studying how knowledge workers can become more productive and found that the answer.. 
+                                    <div class="row">
+                                        
+                                        <span style="vertical-align: middle; margin-left: 15px"><img src="calendar-24.png" width="18px"> Jun 20</span>
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="visited.png" width="18px"> Visited 4 times</span>
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="domain-24.png" width="18px"> You found on Twitter</span>
+                                        <span style="vertical-align: middle; margin-left: 50px"><img src="laptop-24.png" width="18px"> Laptop</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="col"> <!-- this column will have customization settings-->
+            customization settings here
+        </div>
+      </div> <!-- second row ends-->
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> -->
+  </body>
+</html>
