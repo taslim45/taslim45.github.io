@@ -29,6 +29,8 @@
     </div>
     <script>
         let stateOfBackground = "collapse";
+        let itemClicked = false;
+
         function expandOrCollapse() {
             if(stateOfBackground === "collapse") expand();
             else collapse();
@@ -51,23 +53,28 @@
             // console.log('mouseover');
             // console.log(event.target);
             let mouseOverElement = event.target;
+            // console.log(mouseOverElement);
             let elemId = mouseOverElement.id;
             let index = parseInt(elemId);
-            changeItemToHoverState(mouseOverElement, index-1);
+            if(elemId === '2' && itemClicked == true);
+            else changeItemToHoverState(mouseOverElement, index-1);
         }
 
         function eventsMouseOut(event) {
             // console.log('mouseout');
             // console.log(event.target);
             let mouseOutElement = event.target;
+            // console.log(mouseOutElement);
             let elemId = mouseOutElement.id;
             let index = parseInt(elemId);
-            changeItemToDefaultState(mouseOutElement, index-1);
+            if(elemId === '2' && itemClicked == true);
+            else changeItemToDefaultState(mouseOutElement, index-1);
         }
 
         function secondClicked(event) {
             let elm = document.getElementById('2');
-            console.log(elm);
+            // console.log(elm);
+            itemClicked = true;
             elm.src = "img/Todo2_Selected.png";
         }
 
