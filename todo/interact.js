@@ -63,3 +63,53 @@ function changeItemToDefaultState(elm, index) {
 function changeItemToSelectState(elm, index) {
     elm.src = eventsListClickSrc[index];
 }
+
+// new changes
+
+function hoverFirstItem() {
+    changeItemToHoverState(document.getElementById('1', 0));
+}
+
+function hoverSecondItem() {
+    changeItemToHoverState(document.getElementById('2', 1));
+}
+
+function hoverThirdItem() {
+    changeItemToHoverState(document.getElementById('3', 2));
+}
+
+function hoverFourthItem() {
+    changeItemToHoverState(document.getElementById('4', 3));
+}
+
+function hoverFifthItem() {
+    changeItemToHoverState(document.getElementById('5', 4));
+}
+
+function defaultFirstItem() {
+    changeItemToDefaultState(document.getElementById('1', 0));
+}
+
+function defaultSecondItem() {
+    changeItemToDefaultState(document.getElementById('2', 1));
+}
+
+function defaultThirdItem() {
+    changeItemToDefaultState(document.getElementById('3', 2));
+}
+
+function defaultFourthItem() {
+    changeItemToDefaultState(document.getElementById('4', 3));
+}
+
+function defaultFifthItem() {
+    changeItemToDefaultState(document.getElementById('5', 4));
+}
+
+function selectFirstItem() {
+    changeItemToSelectState(document.getElementById('1', 0));
+}
+
+function selectSecondItem() {
+    changeItemToSelectState(document.getElementById('2', 1));
+}
