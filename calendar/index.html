@@ -52,22 +52,55 @@
             let mouseOverElement = event.target;
             let elemId = mouseOverElement.id;
             let index = parseInt(elemId);
-            changeItemToHoverState(mouseOverElement, index-1);
+            // changeItemToHoverState(mouseOverElement, index-1);
+            switch(index) {
+                case 1: 
+                    hoverFirstItem();
+                    break;
+                case 2: 
+                    hoverSecondItem();
+                    break;
+                case 3: 
+                    hoverThirdItem();
+                    break; 
+                case 4: 
+                    hoverFourthItem();
+                    break;
+            }
         }
 
         function eventsMouseOut(event) {
             let mouseOutElement = event.target;
             let elemId = mouseOutElement.id;
             let index = parseInt(elemId);
-            changeItemToDefaultState(mouseOutElement, index-1);
+            // changeItemToDefaultState(mouseOutElement, index-1);
+            switch(index) {
+                case 1: 
+                    defaultFirstItem();
+                    break;
+                case 2: 
+                    defaultSecondItem();
+                    break;
+                case 3: 
+                    defaultThirdItem();
+                    break; 
+                case 4: 
+                    defaultFourthItem();
+                    break;
+            }
         }
 
         function eventsClick(event) {
             let clickElement = event.target;
             let elemId = clickElement.id;
             let index = parseInt(elemId);
-            if(index <= 2) {
-                changeItemToSelectState(clickElement, index - 1);
+            switch(index) {
+                case 1: 
+                    selectFirstItem();
+                    break;
+                case 2: 
+                    selectSecondItem();
+                    break;
             }
         }
     </script>

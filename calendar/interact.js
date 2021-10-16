@@ -62,41 +62,41 @@ function changeItemToSelectState(elm, index) {
 // new changes
 
 function hoverFirstItem() {
-    changeItemToHoverState(document.getElementById('1', 0));
+    changeItemToHoverState(document.getElementById('1'), 0);
 }
 
 function hoverSecondItem() {
-    changeItemToHoverState(document.getElementById('2', 1));
+    changeItemToHoverState(document.getElementById('2'), 1);
 }
 
 function hoverThirdItem() {
-    changeItemToHoverState(document.getElementById('3', 2));
+    changeItemToHoverState(document.getElementById('3'), 2);
 }
 
 function hoverFourthItem() {
-    changeItemToHoverState(document.getElementById('4', 3));
+    changeItemToHoverState(document.getElementById('4'), 3);
 }
 
 function defaultFirstItem() {
-    changeItemToDefaultState(document.getElementById('1', 0));
+    changeItemToDefaultState(document.getElementById('1'), 0);
 }
 
 function defaultSecondItem() {
-    changeItemToDefaultState(document.getElementById('2', 1));
+    changeItemToDefaultState(document.getElementById('2'), 1);
 }
 
 function defaultThirdItem() {
-    changeItemToDefaultState(document.getElementById('3', 2));
+    changeItemToDefaultState(document.getElementById('3'), 2);
 }
 
 function defaultFourthItem() {
-    changeItemToDefaultState(document.getElementById('4', 3));
+    changeItemToDefaultState(document.getElementById('4'), 3);
 }
 
 function selectFirstItem() {
-    changeItemToSelectState(document.getElementById('1', 0));
+    changeItemToSelectState(document.getElementById('1'), 0);
 }
 
 function selectSecondItem() {
-    changeItemToSelectState(document.getElementById('2', 1));
+    changeItemToSelectState(document.getElementById('2'), 1);
 }
