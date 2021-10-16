@@ -1,6 +1,6 @@
 let eventsListDefaultSrc = [ 'img/Todo1_Default.png', 'img/Todo2_Default.png', 'img/Todo3_Default.png', 'img/Todo4_Default.png', 'img/Todo5_Default.png' ];
 let eventsListHoverSrc = [ 'img/Todo1_inFocus.png', 'img/Todo2_inFocus.png', 'img/Todo3_inFocus.png', 'img/Todo4_inFocus.png', 'img/Todo5_inFocus.png' ];
-let eventsListClickSrc = [ 'img/EVENT 1_Selected.png', 'img/EVENT 2_Selected.png' ];
+let eventsListClickSrc = [ 'img/Todo1_inFocus.png', 'img/Todo2_Selected.png' ];
 
 function changeToExpandedBackground() {
     let backgroundElm = document.getElementById("coll-back");
@@ -67,49 +67,49 @@ function changeItemToSelectState(elm, index) {
 // new changes
 
 function hoverFirstItem() {
-    changeItemToHoverState(document.getElementById('1', 0));
+    changeItemToHoverState(document.getElementById('1'), 0);
 }
 
 function hoverSecondItem() {
-    changeItemToHoverState(document.getElementById('2', 1));
+    changeItemToHoverState(document.getElementById('2'), 1);
 }
 
 function hoverThirdItem() {
-    changeItemToHoverState(document.getElementById('3', 2));
+    changeItemToHoverState(document.getElementById('3'), 2);
 }
 
 function hoverFourthItem() {
-    changeItemToHoverState(document.getElementById('4', 3));
+    changeItemToHoverState(document.getElementById('4'), 3);
 }
 
 function hoverFifthItem() {
-    changeItemToHoverState(document.getElementById('5', 4));
+    changeItemToHoverState(document.getElementById('5'), 4);
 }
 
 function defaultFirstItem() {
-    changeItemToDefaultState(document.getElementById('1', 0));
+    changeItemToDefaultState(document.getElementById('1'), 0);
 }
 
 function defaultSecondItem() {
-    changeItemToDefaultState(document.getElementById('2', 1));
+    changeItemToDefaultState(document.getElementById('2'), 1);
 }
 
 function defaultThirdItem() {
-    changeItemToDefaultState(document.getElementById('3', 2));
+    changeItemToDefaultState(document.getElementById('3'), 2);
 }
 
 function defaultFourthItem() {
-    changeItemToDefaultState(document.getElementById('4', 3));
+    changeItemToDefaultState(document.getElementById('4'), 3);
 }
 
 function defaultFifthItem() {
-    changeItemToDefaultState(document.getElementById('5', 4));
+    changeItemToDefaultState(document.getElementById('5'), 4);
 }
 
 function selectFirstItem() {
-    changeItemToSelectState(document.getElementById('1', 0));
+    changeItemToSelectState(document.getElementById('1'), 0);
 }
 
 function selectSecondItem() {
-    changeItemToSelectState(document.getElementById('2', 1));
+    changeItemToSelectState(document.getElementById('2'), 1);
 }

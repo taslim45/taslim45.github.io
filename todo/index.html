@@ -57,7 +57,25 @@
             let elemId = mouseOverElement.id;
             let index = parseInt(elemId);
             if(elemId === '2' && itemClicked == true);
-            else changeItemToHoverState(mouseOverElement, index-1);
+            else {
+                switch(index) {
+                    case 1:
+                        hoverFirstItem();
+                        break;
+                    case 2: 
+                        hoverSecondItem();
+                        break;
+                    case 3: 
+                        hoverThirdItem();
+                        break;
+                    case 4: 
+                        hoverFourthItem();
+                        break;
+                    case 5:
+                        hoverFifthItem();   
+                        break;                                
+                }
+            }
         }
 
         function eventsMouseOut(event) {
@@ -68,14 +86,33 @@
             let elemId = mouseOutElement.id;
             let index = parseInt(elemId);
             if(elemId === '2' && itemClicked == true);
-            else changeItemToDefaultState(mouseOutElement, index-1);
+            else {
+                switch(index) {
+                    case 1:
+                        defaultFirstItem();
+                        break;
+                    case 2: 
+                        defaultSecondItem();
+                        break;
+                    case 3: 
+                        defaultThirdItem();
+                        break;
+                    case 4: 
+                        defaultFourthItem();
+                        break;
+                    case 5:
+                        defaultFifthItem();   
+                        break;                                
+                }
+            }
         }
 
         function secondClicked(event) {
-            let elm = document.getElementById('2');
+            // let elm = document.getElementById('2');
             // console.log(elm);
             itemClicked = true;
-            elm.src = "img/Todo2_Selected.png";
+            // elm.src = "img/Todo2_Selected.png";
+            selectSecondItem();
         }
     </script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
