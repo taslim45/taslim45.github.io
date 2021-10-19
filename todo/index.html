@@ -113,6 +113,20 @@
             itemClicked = true;
             // elm.src = "img/Todo2_Selected.png";
             selectSecondItem();
+            setTimeout(function() {
+                reorder();
+            }, 1000);
+        }
+
+        function reorder() {
+            // console.log('removing first child');
+            let eventList = document.getElementById("events_list");
+            let child0 = eventList.children[0];
+            // console.log(child0);
+            eventList.removeChild(child0);
+            setTimeout(function() {
+                eventList.appendChild(child0);
+            }, 300);
         }
     </script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
