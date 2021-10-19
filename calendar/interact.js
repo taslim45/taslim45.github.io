@@ -16,11 +16,11 @@ function repositionEventsListExpanded() {
 
 function addEventsWhenExpanded() {
     let eventList = document.getElementById("events_list");
-    let srcs = [ 'img/EVENT 3_Default.png', 'img/EVENT 4_Default.png' ];
-    for(let i = 0; i<srcs.length; i++) {
+    // let srcs = [ 'img/EVENT 3_Default.png', 'img/EVENT 4_Default.png' ];
+    for(let i = 1; i<eventsListDefaultSrc.length; i++) {
         let image = document.createElement('img');
-        image.src = srcs[i];
-        image.id = 3 + i;
+        image.src = eventsListDefaultSrc[i];
+        image.id = 1 + i;
         image.style.width = '100%';
 
         let lItem = document.createElement('li');
@@ -36,13 +36,14 @@ function changeToCollapsedBackground() {
 
 function repositionEventsListCollapsed() {
     let events = document.getElementById("events");
-    events.style.marginTop = "5%";
-    events.style.width = "75%";
-    events.style.marginRight = "5%";
+    events.style.marginTop = "4%";
+    events.style.width = "80%";
+    events.style.marginRight = "3%";
 }
 
 function deleteEventsWhenCollapsed() {
     let eventList = document.getElementById("events_list");
+    eventList.removeChild(eventList.lastChild);
     eventList.removeChild(eventList.lastChild);
     eventList.removeChild(eventList.lastChild);
 }
