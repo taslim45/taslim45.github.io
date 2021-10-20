@@ -30,6 +30,7 @@
     <script>
         let stateOfBackground = "collapse";
         let itemClicked = false;
+        let clicks = 0;
 
         function expandOrCollapse() {
             if(stateOfBackground === "collapse") expand();
@@ -111,11 +112,14 @@
             // let elm = document.getElementById('2');
             // console.log(elm);
             itemClicked = true;
+            clicks++;
             // elm.src = "img/Todo2_Selected.png";
-            selectSecondItem();
-            setTimeout(function() {
-                reorder();
-            }, 1000);
+            if(clicks <= 1) {
+                selectSecondItem();
+                setTimeout(function() {
+                    reorder();
+                }, 1000);
+            }
         }
 
         function reorder() {
